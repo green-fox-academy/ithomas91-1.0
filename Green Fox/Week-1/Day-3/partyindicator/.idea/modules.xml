@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/hellouser.iml" filepath="$PROJECT_DIR$/.idea/hellouser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/partyindicator.iml" filepath="$PROJECT_DIR$/.idea/partyindicator.iml" />
     </modules>
   </component>
 </project>
