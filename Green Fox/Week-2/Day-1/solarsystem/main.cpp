@@ -10,7 +10,16 @@
 
 std::vector<std::string> putSaturn(const std::vector<std::string>& planets)
 {
+    std::vector<std::string> newPlanet;
 
+           for(int i = 0; i < planets.size(); i++){
+
+               newPlanet.push_back(planets[i]);
+           }
+
+         newPlanet.insert(newPlanet.begin() + 5, "Saturn" );
+
+           return newPlanet;
 }
 
 int main(int argc, char* args[])
@@ -18,8 +27,12 @@ int main(int argc, char* args[])
     std::vector<std::string> planets = {"Mercury","Venus","Earth","Mars","Jupiter","Uranus","Neptune"};
 
 
-    std::vector<std::string correctPlanets = putSaturn(planets);
 
+    //int pos = planets.find("Jupiter");
+
+
+
+     std::vector<std::string>correctPlanets = putSaturn(planets);
     for(int i = 0; i < correctPlanets.size(); ++i) {
         std::cout << correctPlanets[i] << " ";
     }
