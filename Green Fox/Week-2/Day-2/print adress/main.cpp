@@ -30,13 +30,12 @@ int main()
 
 
 
-    // prints out the memory addresses
     for (int i = 0; i < sizeof(array)/sizeof(array[0]); i++) {
         std::cout << array + i << std::endl;
     }
 
 
-    // prints out the values
+
     for (int i = 0; i < sizeof(array)/sizeof(array[0]); i++) {
         std::cout << array[i] << std::endl;
     }
