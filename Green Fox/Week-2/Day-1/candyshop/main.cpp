@@ -7,7 +7,7 @@
 // Your task is to remove them from the list. "sweets" vector can help you with this
 // You should erase every element from "list" vector that is not in "sweets" vector.
 // No, don't just remove the lines
-// Create a method called filter() which takes the two lists as parameters. 
+// Create a method called filter() which takes the two lists as parameters.
 
 int main(int argc, char* args[])
 {
