@@ -1,47 +1,27 @@
 #include <iostream>
 
-for (int i = 0; i < size; i++);
+// Write a program that asks for a number.
+// It would ask this many times to enter an integer,
+// if all the integers are entered, it should print the sum and average of these
+// integers like:
+//
+// Sum: 22, Average: 4.4
 
-int main() {
-
-    std::cout<< "Enter an Integer"<<std::endl;
-
-    int userinput;
-
-    std::cin >> userinput;
-
-    userinput += userinput;
-
-    std::cout << userinput << std::endl;
-
-    return 0;
-}
-
-    for (int i = 1; i < size; i++){
-
-        sum += i;
-
-        return sum;
-
-    }
-
-/*
-#include <iostream>
-#include <string>
 
 int main(int argc, char* args[]) {
 
-    int a = 0;
 
-    while (a < 10) {
-        std::cout << a << std::endl;
-        a += 1;
-    }
+    std::cout<<"Enter any Integer please! As many you want."<<std::endl;
+    int array[5];
 
-    for (int i = 0; i < 100 ; i++) {
-        std::cout << i << std::endl;
+    for( int i = 0; i < sizeof(array)/sizeof(array[0]); i++){
+
+       std::cin>> array[i];
+
     }
+    int sum += array[i];
+
+    std::cout<< sum<<std::endl;
 
     return 0;
 }
- */
