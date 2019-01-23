@@ -8,25 +8,34 @@
 // It should return zero if it can't open the file
 
 
-int func(std::string filename);
+int func(std::string filename){
+    int count = 0;
+    std::string line;
+
+    std::ifstream file (filename);
+    if (file.is_open()) {
 
 
-std::ifstream myfile (filename);
-if (myfile.is_open){
-    while
+        while (std::getline(file, line)) {
+            count++;
 
+        }
+        return count;
+    }else {
+        return 0;
 
+    }
 
 }
 
-
 int main () {
+    int count = 0;
+    std::string line;
+    std::string filename;
+    std::cout<<" Enter a file name!"<<std::endl;
+    std::cin >> filename;
 
-   std::string a;
-  std::cout<< "Please, enter a file name!"<<std::endl;
-  std::cin>> a;
-
-
+        std::cout<< "Numbers of lines in the file: " << func(filename) <<std::endl;
 
     return 0;
 }
