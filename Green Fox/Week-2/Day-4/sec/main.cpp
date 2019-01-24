@@ -8,7 +8,6 @@ const int SCREEN_HEIGHT = 480;
 //Draws geometry on the canvas
 void draw();
 
-
 //Starts up SDL and creates window
 bool init();
 
@@ -21,14 +20,26 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
-void draw()
-{
-    // draw a red horizontal line to the canvas' middle.
-    // draw a green vertical line to the canvas' middle.
+void draw() {
 
-    SDL_SetRenderDrawColor(gRenderer, 0XFF, 0x00, 0x00, 0xff);
-    SDL_RenderDrawLine(gRenderer, 0, 240, 640, 240);
+
+// create a square drawing function that takes 2 parameters:
+// the x and y coordinates of the square's top left corner
+// and draws a 50x50 square from that point.
+// draw at least 3 squares with that function.
+// avoid code duplication.
+
+    int x;
+    int y;
+
+    for( i = 0; i < 3; i++){
+    
+    }
 }
+
+
+
+
 
 bool init()
 {
@@ -40,15 +51,15 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Line in the middle", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-    if( gWindow == nullptr )
+    gWindow = SDL_CreateWindow( "Position square", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI);
+    if( gWindow == nullptr )#
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
         return false;
     }
 
     //Create renderer for window
-    gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED );
+    gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_SOFTWARE );
     if( gRenderer == nullptr )
     {
         std::cout << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
@@ -72,11 +83,9 @@ void close()
     SDL_Quit();
 }
 
-int main( int argc, char* args[] )
-{
+int main( int argc, char* args[] ) {
     //Start up SDL and create window
-    if( !init() )
-    {
+    if (!init()) {
         std::cout << "Failed to initialize!" << std::endl;
         close();
         return -1;
@@ -89,7 +98,7 @@ int main( int argc, char* args[] )
     SDL_Event e;
 
     //While application is running
-    while( !quit ) {
+    while (!quit) {
         //Handle events on queue
         while (SDL_PollEvent(&e) != 0) {
             //User requests quit

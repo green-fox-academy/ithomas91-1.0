@@ -1,11 +1,17 @@
+macOS, open all dmg files and copy the .framework file to /Library/Frameworks The SDL2_plugins folder need to be copied to somewhere on your drive as it is. For example: /usr/local
+
+Let's see the setup through the line in the middle exercise:
+In the root you need the main.cpp and a CMakeLists.txt
+You also need a directory called cmake for the preconfigured CMake files (FindSDL2.cmake, FindSDL2_image.cmake, FindSDL2_ttf.cmake). Download these files and insert them into the cmake directory.
+You need the following in the CMakeLists.txt:
 cmake_minimum_required(VERSION 3.12)
-project(Middlelines)
+project(line_in_the_middle)
 
 set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-set(SDL2_GFX "/users/ithomas/downloads/sdl2_macos/sdl2_plugins/gfx")
+set(SDL2_GFX "/Users/ithomas/Desktop/ithomas91-1.0/Clion SDL/SDL2_plugins/gfx")
 
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)

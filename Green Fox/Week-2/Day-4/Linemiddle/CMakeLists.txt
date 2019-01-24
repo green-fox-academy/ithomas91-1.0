@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-set(SDL2_GFX "/users/ithomas/desktop/ithomas91-1.0/Clion SDL/SDL2_plugins/gfx")
+set(SDL2_GFX "/Users/ithomas/Desktop/ithomas91-1.0/Clion SDL/SDL2_plugins/gfx")
 
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
@@ -16,6 +16,6 @@ include_directories(${SDL2_GFX}/inc)
 file(GLOB gfx_inc "${SDL2_GFX}/inc/*.h")
 file(GLOB gfx_src "${SDL2_GFX}/src/*.c")
 
-add_executable(center_box_function main.cpp ${gfx_inc} ${gfx_src})
+add_executable(line_in_the_middle main.cpp ${gfx_inc} ${gfx_src})
 
-target_link_libraries(center_box_function ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES})
+target_link_libraries(line_in_the_middle ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES})
