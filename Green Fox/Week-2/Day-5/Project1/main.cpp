@@ -20,31 +20,44 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
-void draw() {
+void draw()
+{
+    int x1 = 640;
+    int y2 = 480;
 
 
-// create a square drawing function that takes 2 parameters:
-// the x and y coordinates of the square's top left corner
-// and draws a 50x50 square from that point.
-// draw at least 3 squares with that function.
-// avoid code duplication.
 
-    int x;
-    int y;
+    for(int i = 0; i < 32; i++){
 
-    for( i = 0; i <= 3; i++){
 
-        x = (random() % 590);
-        y = (random() +300);
+        SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+        SDL_RenderDrawLine(gRenderer,  x1, 480, 0, y2);
 
-    SDL_setre
 
+        x1 -=20;
+        y2 -=20;
     }
+
+
+    SDL_Delay(500);
+
+    /* SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+    SDL_RenderDrawLine(gRenderer,  620, 480, 0, 440);
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+    SDL_RenderDrawLine(gRenderer,  600, 480, 0, 420);
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+    SDL_RenderDrawLine(gRenderer,  580, 480, 0, 400);
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+    SDL_RenderDrawLine(gRenderer,  560, 480, 0, 380);
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+    SDL_RenderDrawLine(gRenderer,  540, 480, 0, 360);
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+    SDL_RenderDrawLine(gRenderer,  520, 480, 0, 340);
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+    SDL_RenderDrawLine(gRenderer,  500, 480, 0, 320);*/
+
+
 }
-
-
-
-
 
 bool init()
 {
@@ -56,8 +69,8 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Position square", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI);
-    if( gWindow == nullptr )#
+    gWindow = SDL_CreateWindow( "Starry night", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI);
+    if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
         return false;
@@ -88,9 +101,11 @@ void close()
     SDL_Quit();
 }
 
-int main( int argc, char* args[] ) {
+int main( int argc, char* args[] )
+{
     //Start up SDL and create window
-    if (!init()) {
+    if( !init() )
+    {
         std::cout << "Failed to initialize!" << std::endl;
         close();
         return -1;
@@ -103,7 +118,7 @@ int main( int argc, char* args[] ) {
     SDL_Event e;
 
     //While application is running
-    while (!quit) {
+    while( !quit ) {
         //Handle events on queue
         while (SDL_PollEvent(&e) != 0) {
             //User requests quit
