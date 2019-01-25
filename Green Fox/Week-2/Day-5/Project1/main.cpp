@@ -3,7 +3,7 @@
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_HEIGHT = 640;
 
 //Draws geometry on the canvas
 void draw();
@@ -22,8 +22,8 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    int x1 = 640;
-    int y2 = 480;
+    int x1 = SCREEN_WIDTH;
+    int y2 = SCREEN_HEIGHT;
 
 
 
@@ -31,13 +31,29 @@ void draw()
 
 
         SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
-        SDL_RenderDrawLine(gRenderer,  x1, 480, 0, y2);
+        SDL_RenderDrawLine(gRenderer,  x1 , SCREEN_HEIGHT, 0, y2);
 
 
         x1 -=20;
         y2 -=20;
     }
 
+
+    int Z = SCREEN_WIDTH;
+    int y = SCREEN_HEIGHT;
+
+
+
+    for(int i = 0; i < 32; i++){
+
+
+        SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0xFF, 0xFF);
+        SDL_RenderDrawLine(gRenderer,  Z, 0, 640, 0);
+
+
+        //x -=20;
+       // y +=20;
+       }
 
     SDL_Delay(500);
 
@@ -77,7 +93,7 @@ bool init()
     }
 
     //Create renderer for window
-    gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_SOFTWARE );
+    gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED );
     if( gRenderer == nullptr )
     {
         std::cout << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
