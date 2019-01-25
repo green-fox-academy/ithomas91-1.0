@@ -39,7 +39,7 @@ void draw()
     }
 
 
-    int Z = SCREEN_WIDTH;
+    int x = SCREEN_WIDTH;
     int y = SCREEN_HEIGHT;
 
 
@@ -48,12 +48,12 @@ void draw()
 
 
         SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0xFF, 0xFF);
-        SDL_RenderDrawLine(gRenderer,  Z, 0, 640, 0);
+        SDL_RenderDrawLine(gRenderer, x, 0, 640, y);
 
 
-        //x -=20;
-       // y +=20;
-       }
+        x -=20;
+        y -=20;
+    }
 
     SDL_Delay(500);
 
