@@ -11,12 +11,10 @@ int main()
     std::cout<<"Enter 5 integer!"<<std::endl;
 
     int array[5];
-
-
+    
     for(int i = 0; i < sizeof(array)/ sizeof(array[0]); i++) {  // can be i < 5 , as it written
 
         std::cin>> array[i];
-
     }
     /* int a;
     int b;
@@ -37,8 +35,6 @@ int main()
 
     for(int i = 0; i < sizeof(array)/sizeof(array[i]); i++){
         std::cout<< arrayp[i]<<std::endl;
-
-
 
     }
     return 0;
