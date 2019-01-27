@@ -27,39 +27,63 @@ void draw()
     int y2 = 0;
 
 
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 32; i++) {
 
 
 
         SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
         SDL_RenderDrawLine(gRenderer, x1, 320, 320, y2);
 
-        x1 -= 20;
-        y2 += 20;
+        x1 -= 10;
+        y2 += 10;
 
     }
 
-    int x = SCREEN_WIDTH;
-    int y = SCREEN_HEIGHT;
+    int x = 320;
+    int y = 640;
 
 
 
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 32; i++) {
 
 
 
         SDL_SetRenderDrawColor(gRenderer, 0x00, 0xFF, 0x00, 0xFF);
-        SDL_RenderDrawLine(gRenderer, 0, 320, 320, 640);
+        SDL_RenderDrawLine(gRenderer, x, 320, 320, y);
 
-        SDL_SetRenderDrawColor(gRenderer, 0x00, 0xFF, 0x00, 0xFF);
-        SDL_RenderDrawLine(gRenderer, 0, 320, 320, 620);
+
+        x -= 10;
+        y -= 10;
 
 
     }
+        int x3 = 320;
+        int y3 =640;
 
-    // Draw the canvas' diagonals.
-    // If it starts from the upper-left corner it should be green, otherwise it should be red.
+    for(int i = 0; i < 32; i++) {
 
+
+        SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0xFF, 0xFF);
+        SDL_RenderDrawLine(gRenderer, x3, 320, 320, y3);
+
+        x3 +=10;
+        y3 -=10;
+    }
+
+    int x4 = 320;
+    int y4 = 0;
+
+
+    for(int i = 0; i < 32; i++) {
+
+
+        SDL_SetRenderDrawColor(gRenderer, 0x00, 0xFF, 0xFF, 0xFF);
+        SDL_RenderDrawLine(gRenderer, x4, 320, 320, y4);
+
+        x4 += 10;
+        y4 += 10;
+
+    }
 }
 
 bool init()
