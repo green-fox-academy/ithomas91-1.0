@@ -7,6 +7,7 @@
 #include <string>
 
 PostIt::PostIt() {
+
         std::string backgroundColor = "black";
         std::string text = "bold";
         std::string textColor = "White";
