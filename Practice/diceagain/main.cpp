@@ -10,17 +10,8 @@
 
 int main(int argc, char* args[])
 {
-
     DiceSet diceSet;
 
-    for (int i = 0; i < 6; ++i) {
-        while(diceSet.getCurrent(i) != 6){
-            diceSet.roll(i);
-        }
-    }
-    for (int j = 0; j < 6; ++j) {
-        std::cout<< diceSet.getCurrent(j)<<std::endl;
-    }
     return 0;
 
 }
