@@ -20,9 +20,9 @@ int main() {
 }
 
 int func(int x, int y) {
-    if (x <= 0) {
+    if (x >= 0) {
         return 0;
     }else {
-     return (func(x - 1) - func(x);
+     return 2 * func(x - 1)
     }
 }

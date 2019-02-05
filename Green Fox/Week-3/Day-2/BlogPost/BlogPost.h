@@ -9,7 +9,6 @@
 class BlogPost {
     public:
         BlogPost(std::string authorName, std::string title, std::string text, std::string publicationDate);
-        void print();
 
         std::string authorName;
         std::string title;

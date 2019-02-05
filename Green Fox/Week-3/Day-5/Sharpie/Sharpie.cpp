@@ -4,26 +4,28 @@
 #include <string>
 #include "Sharpie.h"
 
-Sharpie::Sharpie(std::string _color, float _width){
-
+Sharpie::Sharpie(std::string _color, float _width)
+{
     color = _color;
     width = _width;
     inkAmount = 100;
-
 }
 
-void Sharpie::Use() {
+void Sharpie::Use()
+{
     inkAmount --;
-
 }
-std::string Sharpie::getColor() {
+std::string Sharpie::getColor()
+{
     return color;
 }
 
-float Sharpie::getWidth() {
+float Sharpie::getWidth()
+{
     return width;
 }
 
-float Sharpie::getinkAmount() {
+float Sharpie::getinkAmount()
+{
     return inkAmount;
 }

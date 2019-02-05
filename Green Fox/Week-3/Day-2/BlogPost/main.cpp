@@ -11,7 +11,7 @@ BlogPost post3("William Turton", "One Engineer Is Trying to Get IBM to Reckon Wi
 
 
 
-std::cout << post2.title <<std::endl;
+std::cout << post2.authorName <<std::endl;
 
     return 0;
 }

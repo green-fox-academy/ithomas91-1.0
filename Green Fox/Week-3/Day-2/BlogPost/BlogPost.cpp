@@ -12,4 +12,3 @@ BlogPost::BlogPost(std::string authorName_, std::string title_, std::string text
         text = text_;
         publicationDate = publicationDate_;
 }
-void BlogPost::print() {}

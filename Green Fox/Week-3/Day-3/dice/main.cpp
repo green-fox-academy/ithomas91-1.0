@@ -18,7 +18,7 @@ int main(int argc, char* args[])
             diceSet.roll(i);
         }
     }
-    for (int j = 0; j < 6; ++j) {
+        for (int j = 0; j < 6; ++j) {
         std::cout<< diceSet.getCurrent(j)<<std::endl;
     }
     return 0;

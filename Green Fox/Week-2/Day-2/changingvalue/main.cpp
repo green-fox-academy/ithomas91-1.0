@@ -6,24 +6,18 @@
 
 int main ()
 {
-
-
     float temperature = 21.3;
     float temperature2 = 32.2;
 
     float *temperaturep;
     float *temperaturep2;
 
-
-
     temperaturep = &temperature;
     temperaturep2 = &temperature2;
 
-
     *temperaturep = *temperaturep2;
 
-
-
     std::cout<< *temperaturep<<std::endl;
+
     return 0;
 }
