@@ -5,6 +5,16 @@
 #include "person.h"
 #include <iostream>
 
+std::string getGenderString(Gender gender)
+{
+    if(gender == Gender::MALE){
+        return "male";
+    } else if(gender == Gender::FEMALE){
+        return "female";
+    } else {
+        return "other";
+    }
+}
 
 
 

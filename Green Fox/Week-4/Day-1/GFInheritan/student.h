@@ -10,7 +10,7 @@
 
 class Student : public Person {
 public:
-    Student(std::string name, int age, Gender gender, std::string previousOrganisation);
+    Student(std::string name, int age, Gender gender, std::string previousOrganization);
     Student();
     void getGoal() override;
     void introduce() override;
@@ -19,7 +19,7 @@ public:
 
 private:
 
-    std::string previousOrganisation;
+    std::string _previousOrganization;
     int _skippedDays;
 };
 
