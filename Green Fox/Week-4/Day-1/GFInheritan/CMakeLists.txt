@@ -3,4 +3,4 @@ project(GFInheritan)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(GFInheritan main.cpp person.cpp student.cpp mentor.cpp)
+add_executable(GFInheritan main.cpp person.cpp student.cpp mentor.cpp sponsor.cpp cohort.cpp)

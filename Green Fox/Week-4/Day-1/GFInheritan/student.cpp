@@ -6,8 +6,7 @@
 #include "student.h"
 #include "person.h"
 
-Student::Student(std::string name, int age, Gender gender, std::string previousOrganization) :
-Person(age, name, gender)
+Student::Student(std::string name, int age, Gender gender, std::string previousOrganization) : Person(name, age, gender)
 
 {
     _skippedDays = 0;
