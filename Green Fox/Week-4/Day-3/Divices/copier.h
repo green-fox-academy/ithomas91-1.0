@@ -7,8 +7,9 @@
 
 #include "scanner.h"
 #include "printer2D.h"
-class Copier : public Scanner, Printer2D
+class Copier : public Scanner, public Printer2D
 {
+public:
     Copier(int sizeX, int sizeY, int speed);
     void copy();
 };

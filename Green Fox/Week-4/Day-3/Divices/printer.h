@@ -10,7 +10,7 @@
 class Printer {
 public:
 virtual std::string getSize() = 0;
-std::string print();
+void print();
 };
 
 #endif //DIVICES_PRINTER_H

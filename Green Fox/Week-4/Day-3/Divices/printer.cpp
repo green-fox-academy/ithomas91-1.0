@@ -4,7 +4,7 @@
 
 #include "printer.h"
 
-std::string Printer::print()
+void Printer::print()
 {
-    std::cout << "I'm printing something that's" << getSize() << "c m." << std::endl;
+    std::cout << "I'm printing something that's " << getSize() << " cm." << std::endl;
 }

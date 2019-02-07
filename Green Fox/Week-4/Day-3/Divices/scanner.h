@@ -9,7 +9,7 @@ class Scanner {
 public:
     Scanner(int speed);
     void scan();
-private:
+protected:
     int _speed;
 };
 
