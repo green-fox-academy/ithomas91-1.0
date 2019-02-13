@@ -8,7 +8,7 @@
 
 int main()
 {
-    int number
+    int number;
     int array[] = {1, 4, 9, 13, 20};
     int size = (sizeof(array)/sizeof(array[0]));
 
