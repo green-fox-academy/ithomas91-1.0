@@ -25,7 +25,9 @@ void entranceUsage(std::string inputFileName, std::string outputFileName)
     outputFile.open(outputFileName);
 
     std::string result;
-    result = "Building usage";
+    result = "Building usage: \n\n";
+    outputFile << result;
+
 
     for (std::map<std::string, int>::iterator it = doorUsageType.begin(); it != doorUsageType.end(); ++it) {
         outputFile << it->first << ":" << it->second << std::endl;
