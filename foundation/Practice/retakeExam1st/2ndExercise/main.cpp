@@ -8,28 +8,43 @@ std::map<std::string, int> chipUsage(std::string fileName)
     std::ifstream myFile;
     myFile.open(fileName);
 
-    if(!myFile.is_open()){
+    if (!myFile.is_open()) {
         throw std::string("File can not be opened!");
     }
 
     std::map<std::string, int> result;
     std::string line;
     std::string cardType;
-    int chipUsage = 0;
 
-    while(std::getline(myFile, line)){
+    while (std::getline(myFile, line)) {
         std::stringstream stringStream(line);
         std::string data; // to get data individually
-
-        while (std::getline(stringStream, data, ',')){
-            result[cardType]+= chipUsage;
-            if()
+        int countData = 0;
+        std::string cardNumber;
+        std::string mainEntrance;
+        while (std::getline(stringStream, data, ',')) {
+            //std::cout << data <<std::endl;
+            if (countData == 5) {
+                mainEntrance = data;
+            } else if (countData == 12) {
+                cardNumber = data;
+            }
+            countData++;
         }
+        if (mainEntrance == "A66 - 04 FÕBEJÁRAT (F-1) Door #1") {
+            result[cardNumber]++;
+        }
+
     }
+    return result;
 }
 
 int main()
 {
-    chipUsage("../data.txt");
+    std::map<std::string, int> finalResult = chipUsage("../data.txt");
+
+    for (std::map<std::string, int>::iterator it = finalResult.begin(); it != finalResult.end(); ++it) {
+        std::cout << it->first << ": " << it->second << std::endl;
+    }
     return 0;
 }
