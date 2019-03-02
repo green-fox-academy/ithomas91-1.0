@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
-project(untitled C)
+project(userData C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_library(untitled library.c library.h)
+add_executable(userData main.c)
