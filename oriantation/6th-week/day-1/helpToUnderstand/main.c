@@ -1,18 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
-int main () {
-    int val;
-    char str[20];
+typedef struct team {
+  char name[50];
+  char main_technology[50];
+  int number_of_members;
+} team_t;
 
-    strcpy(str, "98993489");
-    val = atoi(str);
-    printf("String value = %s, Int value = %d\n", str, val);
+int main()
+{
+    team_t team;
+    strcpy(team.name, "Jade-Selection");
+    strcpy(team.main_technology, "Ruby-on-Rails");
+    team.number_of_members = 5;
 
-    strcpy(str, "tutorialspoint.com");
-    val = atoi(str);
-    printf("String value = %s, Int value = %d\n", str, val);
+    printf("The team name is: %s , there are %d people working with %s.\n", team.name, team.number_of_members, team.main_technology);
 
-    return(0);
+    return 0;
 }
