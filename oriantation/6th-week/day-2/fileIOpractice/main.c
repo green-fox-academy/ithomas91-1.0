@@ -1,31 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
-    FILE * f_pointer;
-    f_pointer = fopen("testfileIO-txt", "w");
+    int *num_array;
 
-    fprintf(f_pointer, "I love english football \n i am watching everton - liverpool derby now.\n The result at the moment 0-0\n");
+    // malloc() allocate the memory for 5 integers containing garbage values
+    num_array = (int *)malloc(5 * sizeof(int));
 
-    fclose(f_pointer);
+    // deallocate memory
+    free(num_array);
 
-    FILE *fPointer;
-    fPointer = fopen("testfileIO-txt", "r");
+    // calloc() allocate the memory for 5 integers and set 0 to all of them
+    num_array = (int *)calloc(5, sizeof(int));
 
-    char stringLine[150];
+    // deallocate memory
+    free(num_array);
 
-    while(!feof(fPointer)){
-        fgets(stringLine, 150, fPointer);
-        puts(stringLine);
-    }
-
-    fclose(fPointer);
-
-    FILE * f_Pointer;
-    f_Pointer = fopen("testfileIO-txt", "a");
-
-    fprintf(f_Pointer, "However Liverpool has got may chance, its still 0-0 at the 72th min");
-
-    fclose(f_Pointer);
-
+    return 0;
 }
