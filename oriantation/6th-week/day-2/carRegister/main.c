@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include "car.h"
 
 int main()
 {
-    printf("Hello, World!\n");
+    car_t car1;
+    car1.manufacturers_name;
     return 0;
 }
