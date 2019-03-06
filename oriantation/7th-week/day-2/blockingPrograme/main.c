@@ -19,20 +19,28 @@
 
 int main(void)
 {
-    HAL_Init();
-    BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
-    BSP_LED_Init(LED1);
-//
-   int button_status = 0;
-    while (1) {
-    	if (BSP_PB_GetState(BUTTON_KEY)) {
-    		button_status = 1;
-    	}
-    	if (button_status == 1){
-    	BSP_LED_On(LED1);
-    	HAL_Delay(250);
-    	BSP_LED_Off(LED1);
-    	HAL_Delay(250);
-    	}
-    }
+	HAL_Init();
+
+	    BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
+
+	    BSP_LED_Init(LED1);
+
+	    int sum_press = 0;
+	    int previous_status = 0;
+	    int current_status = 0;
+
+
+	    while (1) {
+
+	        current_status = BSP_PB_GetState(BUTTON_KEY);
+
+	        if(current_status == 1 && previous_status == 0) {
+	        sum_press++;
+	        }
+
+	        previous_status = current_status;
+
+	        if(sum_press >= 5)
+	        BSP_LED_On(LED1);
+	    }
 }
