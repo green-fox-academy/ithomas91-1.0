@@ -38,28 +38,53 @@ int main(void) {
 	 0010
 	 0001*/
 
-	int status[4] = {1, 2, 3, 4};
+	int status[4] = { 1, 2, 3, 4 };
 
 	while (1) {
-		for (int i = 3; i >= 0; --i) {
-			if (status[i] == 1) {
-				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
-				HAL_Delay(300);
-			} else if (status[i] == 2) {
-				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
-				HAL_Delay(300);
-			} else if (status[i] == 3) {
-				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET);
-				HAL_Delay(300);
-			} else if (status[i] == 4) {
+		/*for (int i = 3; i >= 0; i--) {
+		 if (status[i] == 1) {
+		 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
+
+		 } else if (status[i] == 2) {
+		 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
+		 HAL_Delay(150);
+		 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
+		 HAL_Delay(150);
+
+		 } else if (status[i] == 3) {
+		 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
+		 HAL_Delay(75);
+		 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);
+		 HAL_Delay(150);
+
+		 } else if (status[i] == 4) {
+		 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET);
+		 HAL_Delay(75);
+		 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7, GPIO_PIN_SET);
+		 }
+		 }*/
+		for (int i = 0; i < 3; i++) {
+			if (status[i] == 4) {
 				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7, GPIO_PIN_SET);
+				HAL_Delay(150);
+
+			} else if (status[i] == 3) {
 				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7, GPIO_PIN_RESET);
-				HAL_Delay(300);
+				HAL_Delay(150);
+				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);
+				HAL_Delay(150);
+
+			} else if (status[i] == 2) {
+				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET);
+				HAL_Delay(75);
+				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
+				HAL_Delay(150);
+
+			} else if (status[i] == 1) {
+				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
+				HAL_Delay(75);
+				HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
 			}
 		}
-
 	}
 }
