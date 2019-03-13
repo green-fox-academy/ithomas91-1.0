@@ -72,6 +72,9 @@ void init_uart()
 
 void init_timer()
 {
+
+	SystemClock_Config();
+
 	__HAL_RCC_TIM2_CLK_ENABLE();
 														// set the clock for the timer (TIM2)
 	HAL_TIM_Base_DeInit(&timer_handle);
@@ -82,7 +85,7 @@ void init_timer()
 	timer_handle.Init.Prescaler = 54000 - 1;			// 1 / (cpu clock/prescaler value) = prescaler time unit
 														// 1 / (108000000 / 54000) = 0,0005 = 0,5 ms
 
-	timer_handle.Init.Period = 1200 - 1;				// period time = prescaler time unit * period value
+	timer_handle.Init.Period = 1000 - 1;				// period time = prescaler time unit * period value
 														// period time = 0,5 ms (0,0005 s) * (12000 - 1) = 6 s
 
 	timer_handle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
