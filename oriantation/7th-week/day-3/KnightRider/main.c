@@ -12,24 +12,23 @@
 #include "stm32746g_discovery.h"
 
 int main(void) {
-    /* create a config structure */
+
     GPIO_InitTypeDef LEDS;
     HAL_Init();
-    
-    /* we need to enable the GPIOA port's clock first */
+
     __HAL_RCC_GPIOF_CLK_ENABLE()
     ;
-    
+
     LEDS.Pin = GPIO_PIN_7 | GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10;
-    LEDS.Mode = GPIO_MODE_OUTPUT_PP; /* configure as output, in push-pull mode */
-    LEDS.Pull = GPIO_NOPULL; /* we don't need internal pull-up or -down resistor */
-    LEDS.Speed = GPIO_SPEED_HIGH; /* we need a high-speed output */
-    
-    HAL_GPIO_Init(GPIOF, &LEDS); /* initialize the pin on GPIOF port */
-    
+    LEDS.Mode = GPIO_MODE_OUTPUT_PP;
+    LEDS.Pull = GPIO_NOPULL;
+    LEDS.Speed = GPIO_SPEED_HIGH;
+
+    HAL_GPIO_Init(GPIOF, &LEDS);
+
     int change = 0;
     int counter = 0;
-    
+
     /*0001
      0010
      0100
@@ -37,37 +36,51 @@ int main(void) {
      0100
      0010
      0001*/
-    
-    int status[4] = { 1, 2, 3, 4 };
-    
+
+    int status[6] = { 1, 2, 3, 4, 5, 6};
+
     while (1) {
-        
-        for (int i = 0; i <= 4; i++) {
-            if (status[i] == 4) {
-                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7, GPIO_PIN_SET);
-                HAL_Delay(50);
-                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7, GPIO_PIN_RESET);
-                HAL_Delay(50);
-                
-            } else if (status[i] ==3) {
+
+        for (int i = 0; i <= 6; i++) {
+             if (status[i] == 6) {
                 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);
-                HAL_Delay(50);
+                HAL_Delay(100);
                 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET);
-                HAL_Delay(50);
-            } else if (status[i] == 2) {
+                HAL_Delay(100);
+
+            } else if (status[i] == 5) {
+                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
+                HAL_Delay(100);
+                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
+                HAL_Delay(100);
+
+            } else if (status[i] == 4) {
+
+                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
+                HAL_Delay(75);
+                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
+                HAL_Delay(75);
+
+            } else if (status[i] == 3) {
+
                 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
                 HAL_Delay(75);
                 HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
-                HAL_Delay(50);
-                
+                HAL_Delay(75);
+            } else if (status[i] == 2) {
+
+                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);
+                HAL_Delay(75);
+                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET);
+                HAL_Delay(75);
+
             } else if (status[i] == 1) {
-                
-                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
-                HAL_Delay(50);
-                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
-                HAL_Delay(50);
+
+                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7, GPIO_PIN_SET);
+                HAL_Delay(75);
+                HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7, GPIO_PIN_RESET);
+                HAL_Delay(75);
             }
         }
     }
 }
-

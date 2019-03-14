@@ -17,15 +17,17 @@ int main(void)
 
     HAL_GPIO_Init(GPIOF, &LED);
 
-    int begin_status = 1000;
+    int status[4] = {1, 2, 4, 8};
+
+    status = (int *)malloc(status, sizeof(int));
 
     While(1){
 
-        for (int i = 0; i < sizeof(begin_status); ++i) {
-            if(begin_status[i] == 1){
-
-            }
+        for (int i = 0; i < sizeof(status); ++i) {
+            status[i] =
         }
+
+
 
     }
 }
