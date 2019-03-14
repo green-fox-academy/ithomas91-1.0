@@ -26,9 +26,6 @@ int main(void) {
 
     HAL_GPIO_Init(GPIOF, &LEDS);
 
-    int change = 0;
-    int counter = 0;
-
     /*0001
      0010
      0100
