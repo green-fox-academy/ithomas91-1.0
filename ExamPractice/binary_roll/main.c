@@ -10,25 +10,21 @@ void read_binary(char file_name[])
     if (file_pointer == NULL) {
         printf("File cannot be opened!");
     }
+    char file_buffer[50000];
 
-    char file_buffer[200];
-
-    fgets(file_buffer, 200, file_pointer);
+    fgets(file_buffer, 50000, file_pointer);
     puts(file_buffer);
 
     char *token = strtok(file_buffer, " ");
 
-    long temp_number;
+    char temp_number;
     char *temp_char;
 
     while (!token == NULL) {
 
-        for (int i = 0; i < sizeof(file_buffer); ++i) {
 
-            temp_number = strtol(&file_buffer[i], &temp_char, 2);
-            printf("%c\t", temp_number);
-
-        }
+            temp_number = strtol(token, &temp_char, 2);
+            printf("%c", temp_number);
 
         token = strtok(NULL, " ");
     }
