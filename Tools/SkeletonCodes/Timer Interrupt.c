@@ -78,7 +78,7 @@ void init_timer()
 	__HAL_RCC_TIM2_CLK_ENABLE();
 														// set the clock for the timer (TIM2)
 	HAL_TIM_Base_DeInit(&timer_handle);
-														// de-initialize the TIM_Base, because of safety reasons.
+	__HAL_TIM_SET_COUNTER(&timer_handle, 0);													// de-initialize the TIM_Base, because of safety reasons.
 														// if it's already initialized, this deinit it
 	timer_handle.Instance = TIM2;
 														// set structure for the TIM2 timer

@@ -38,18 +38,21 @@ int main(void) {
 
 	return 0;
 }
-	// 
+
 void EXTI15_10_IRQHandler() {
 	HAL_GPIO_EXTI_IRQHandler(user_button_handle.Pin);
 
 }
-	//Looking for weak function in there
-	
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	if (GPIO_Pin == user_button_handle.Pin) {
 		counter++;
 
-		BSP_LED_Toggle(LED_GREEN);
+		if(counter % 5 == 0){
+
+			BSP_LED_Toggle(LED_GREEN);
+
+		}
+
 	}
 }
-
