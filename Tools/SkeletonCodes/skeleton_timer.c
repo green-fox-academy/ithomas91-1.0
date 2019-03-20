@@ -3,6 +3,10 @@
 
 TIM_HandleTypeDef timer_handle;
 
+
+static void Error_Handler(void);
+static void SystemClock_Config(void);
+
 void timer_init (void)
 {
    __HAL_RCC_TIM2_CLK_ENABLE();
