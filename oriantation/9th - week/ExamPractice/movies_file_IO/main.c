@@ -17,7 +17,8 @@ char *get_profit_and_successful_year(char *file_name)
         printf("File cannot be opened!");
     }
 
-    char file_buffer[200];
+    char *file_buffer;
+    file_buffer =(char*)malloc(sizeof(char));
     int i = 0;
     int budget[50];
     int release_date[50];
