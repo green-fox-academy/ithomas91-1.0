@@ -19,55 +19,32 @@ char *get_profit_and_successful_year(char *file_name)
 
     char *file_buffer;
     file_buffer =(char*)malloc(sizeof(char));
-    int i = 0;
-    int budget[50];
-    int release_date[50];
+    uint8_t number_of_lines = 0;
     char **temp;
+
+      char *title;
+      title = (char *)malloc(sizeof(char));
+      int *profit;
+      int *release_date;
+
+
 
     while (!feof(file_pointer)) {
         fgets(file_buffer, 200, file_pointer);
-        printf("%s\n", file_buffer);
-        char *token = strtok(file_buffer, "$");
-        printf("%s\n", token);
-
-        char *profit = strtok(NULL, " ");
-        printf("%s\n", profit);
-        budget[i] = strtol(profit, temp, 10);
-        printf("debug: %x %d\n", temp, budget[i]);
-
-        char *year = strtok(NULL, "\n");
-        printf("%s\n", year);
-        release_date[i] = atoi(year);
-        i++;
+        number_of_lines++;
+        //printf("%s  %d, \n", file_buffer, number_of_lines);
+        char *token = strtok(file_buffer, " ");
+        strcpy(title, token);
+        //printf("%s \n", token);
 
     }
 
-    for (int j = 0; j < 50; ++j) {
-        printf("budget: %d release date: %d \n ", budget[j], release_date[j]);
-    }
-
-    /*int counter = 0;
-    int temp_year = 0;
-    for (int k = 0; k < 50; ++k) {
-        if(release_date[k] == ){
-            counter++;
-            temp_year = release_date[k];
-        }
-    }
-    printf("year :%d how many: %d", temp_year, counter);
-     */
+    printf("%s ", title);
 }
 
 int main()
 {
 
-    typedef struct movies
-    {
-      char title;
-      int profit;
-      int release_date;
-
-    } movies_t;
 
     get_profit_and_successful_year("../file.txt");
     return 0;
