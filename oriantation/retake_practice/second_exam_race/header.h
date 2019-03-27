@@ -29,13 +29,16 @@ competitor_t get_fastest(competitor_t* racer, int size_array, category_t categor
 {
 
     competitor_t fastest;
-    unsigned int max_finish_time = UINT_MAX;
+    unsigned int max_finish_time = 5500;
 
     for (int i = 0; i < size_array; ++i) {
         if(racer[i].finish_time < max_finish_time && racer[i].category == category){
+            max_finish_time = racer[i].finish_time;
             fastest = racer[i];
         }
     }
+
+        printf(" Fastest time is: %u", fastest.finish_time);
     return fastest;
 }
 
