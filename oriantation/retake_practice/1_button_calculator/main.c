@@ -142,6 +142,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 			} else {
 				printf("ERROR, PRESS RESET\r\n");
 				status = BASE_STATUS;
+				HAL_TIM_Base_Stop_IT(&status_timer);
+
 			}
 		}
 	}
