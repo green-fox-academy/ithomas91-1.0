@@ -9,6 +9,19 @@
 // No, don't just remove the lines
 // Create a method called filter() which takes the two lists as parameters.
 
+std::vector<std::string> filter(std::vector<std::string> inputVector1, std::vector<std::string> inputVector2){
+
+    std::vector<std::string> filteredList;
+    for (int i = 0; i < inputVector1.size(); ++i) {
+        for (int j = 0; j < inputVector2.size(); ++j) {
+                if(inputVector2[j] == inputVector1[i]) {
+                    filteredList.push_back(inputVector2[j]);
+                }
+        }
+    }
+    return filteredList;
+}
+
 int main(int argc, char* args[])
 {
     const std::vector<std::string> sweets = {"Cupcake", "Brownie"};

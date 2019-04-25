@@ -9,9 +9,11 @@
 
 int main(int argc, char* args[])
 {
-    std::string example("In a dishwasher far far away");
-    example.replace(5,10, "galaxy");
+    std::string example = "In a dishwasher far far away";
 
-    std::cout << example << std::endl;
+    for (int i = 0; i < example.length(); ++i) {
+        if(example[i] == "dishwasher")
+    }
+
     return 0;
 }
