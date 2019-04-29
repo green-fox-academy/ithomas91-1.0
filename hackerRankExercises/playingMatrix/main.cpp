@@ -6,11 +6,10 @@ std::vector<std::vector<int>> myMatrix (std::vector<std::vector<int>> inputMatri
     std::vector<std::vector<int>> resultMatrix = inputMatrix;
     for (int i = 0; i < inputMatrix.size(); ++i) {
         for (int j = 0; j < inputMatrix.size(); ++j) {
-            if(inputMatrix[i][j] == 0){
-                resultMatrix[resultMatrix.size()-1][resultMatrix.size()-1] = inputMatrix[i][j];
-            }
+            resultMatrix[i][j] = inputMatrix[j][i];
         }
     }
+    return resultMatrix;
 }
 
 
