@@ -3,4 +3,4 @@ project(vectorMinMax)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(vectorMinMax main.cpp)
+add_executable(vectorMinMax main.cpp struct.cpp struct.h)

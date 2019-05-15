@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "struct.h"
 
 typedef enum
 {
@@ -97,6 +98,19 @@ int main() {
         std::cout<< evenNumbers[k] << " ";
     }
     std::cout<<std::endl;
+
+    std::string imageName1 = "IMG_123";
+    std::string imageName2 = "IMG_321";
+
+
+    test_t testVector;
+    testVector.imgPath.push_back(imageName1);
+    testVector.imgPath.push_back(imageName2);
+
+    for (int l = 0; l < 2; ++l) {
+        std::cout << testVector.imgPath[l];
+    }
+
 
     return 0;
 }

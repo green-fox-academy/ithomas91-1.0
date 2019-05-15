@@ -1,0 +1,3 @@
+adatbázis megjelenítése.
+adatbázisba beleirás ugy hogy a meglévőkhöz hozzá adja.
+Kiiratni az uj sikeres regisztráciokat
