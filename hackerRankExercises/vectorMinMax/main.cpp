@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include "struct.h"
-
 typedef enum
 {
     EVEN,
@@ -64,15 +63,31 @@ std::vector<int> sortNumbersEvenOdd(std::vector<int> inputVector, typeNumbers_t 
                 evenNumbers.push_back(inputVector[i]);
             }
         }
-        return evenNumbers;
+
     }
+    return evenNumbers;
 }
 //ASCII
 //
 
+void reverseName(std::string inputName)
+{
+    std::string name = inputName;
+    char temp;
+    int j = inputName.size()-1;
+    for (int i = 0; i < inputName.size()/2; ++i) {
+        temp = name[i];
+        name[i] = name[j - i];
+        name[j-i] = temp;
+    }
+    std::cout<< name << std::endl;
+
+}
+
+
 int main() {
 
-
+    std::string myName = "Tamas Nemeth";
     std::vector<int> numberVector = {-5, -3, -1, 1, 3, 1452, 11, 5, 66, 34, 89, 111, 54};
     int minimumNumber = lookMin(numberVector);
     int maximumNumber = lookMax(numberVector);
@@ -108,8 +123,11 @@ int main() {
     testVector.imgPath.push_back(imageName2);
 
     for (int l = 0; l < 2; ++l) {
-        std::cout << testVector.imgPath[l];
+        std::cout << testVector.imgPath[l]<<std::endl;
     }
+
+    reverseName(myName);
+
 
 
     return 0;

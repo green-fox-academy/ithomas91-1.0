@@ -3,4 +3,4 @@ project(userAutentication)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(userAutentication main.cpp)
+add_executable(userAutentication main.cpp functions.cpp functions.h)

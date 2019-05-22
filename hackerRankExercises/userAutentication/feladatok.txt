@@ -1,3 +1,5 @@
-adatbázis megjelenítése.
-adatbázisba beleirás ugy hogy a meglévőkhöz hozzá adja.
+adatbázis megjelenítése. kész
+adatbázisba beleirás ugy hogy a meglévőkhöz hozzá adja. kész
 Kiiratni az uj sikeres regisztráciokat
+Jelszó erősség (nagy betü és szám előírása)
+uj regisztrációk végére adása new register függvényben.
