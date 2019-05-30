@@ -36,5 +36,9 @@ else:
     print("Invalid operator!")
 
 
-
+i = 0
+while i <= 10:
+    print(i)
+    i+=1
+print("While loop done!")
 
