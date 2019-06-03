@@ -73,6 +73,11 @@ int main() {
         token = strtok(NULL, s);
     }
 
+    char * movie = "Best";
+    char movie2[] = "Best";
+
+    printf("%d\n", sizeof(movie));
+    printf("%d\n", sizeof(movie2));
 
     return 0;
 }

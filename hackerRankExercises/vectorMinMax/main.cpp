@@ -84,9 +84,22 @@ void reverseName(std::string inputName)
 
 }
 
+// SZORZÓTÁBLA
+
+std::vector<std::vector<int>> function(int number)
+{
+    std::vector<std::vector<int>> result(number, std::vector<int>(number));
+
+    for (int i = 0; i < number; i++){
+        for (int j = 0; j < number; j++){
+            result[i][j] = (i+1)*(j+1);
+        }
+    }
+    return result;
+}
 
 int main() {
-
+/*
     std::string myName = "Tamas Nemeth";
     std::vector<int> numberVector = {-5, -3, -1, 1, 3, 1452, 11, 5, 66, 34, 89, 111, 54};
     int minimumNumber = lookMin(numberVector);
@@ -127,7 +140,34 @@ int main() {
     }
 
     reverseName(myName);
+*/
 
+    int number = 5;
+    int number2 = 5;
+
+    std::vector<std::vector<int>> result(number, std::vector<int>(number));
+    result = function(number);
+    std::vector<std::vector<int>> result2(number2, std::vector<int>(number2));
+    result2 = function(number2);
+
+
+    for (int i = 0; i < number; i++){
+        for (int j = 0; j < number; j++){
+            std::cout <<result[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+
+    for (int i = 0; i < number2; i++){
+        for (int j = 0; j < number2; j++){
+            std::cout << result2[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+
+    return 0;
 
 
     return 0;
