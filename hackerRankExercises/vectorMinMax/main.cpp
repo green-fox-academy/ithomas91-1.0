@@ -88,14 +88,45 @@ void reverseName(std::string inputName)
 
 std::vector<std::vector<int>> function(int number)
 {
-    std::vector<std::vector<int>> result(number, std::vector<int>(number));
+    std::vector<std::vector<int>> resultMatrix(number, std::vector<int>(number));
+    int size = number;
 
-    for (int i = 0; i < number; i++){
-        for (int j = 0; j < number; j++){
-            result[i][j] = (i+1)*(j+1);
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            resultMatrix[i][j] = (i+1)*(j+1);
         }
     }
-    return result;
+    return resultMatrix;
+}
+
+std::vector<int> bubbleSort(std::vector<int> inputVector)
+{
+    std::vector<int> resultVector = inputVector;
+
+    for (int i = 0; i < resultVector.size()-1; ++i) {
+        for (int j = 0; j < resultVector.size()-1-i; ++j) {
+            if(resultVector[j] > resultVector [j + 1]){
+                int temp = resultVector [j];
+                    resultVector[j] = resultVector[j + 1];
+                    resultVector[j + 1] = temp;
+
+            }
+        }
+    }
+    return resultVector;
+}
+
+void stringReverse ( std::string input)
+{
+    std::string result = input;
+    int lenght = result.length();
+    char temp;
+    for (int i = 0; i < result.length()/2; ++i) {
+        temp = result[i];
+        result[i] = result[lenght - i -1];
+        result[lenght - i -1] = temp;
+    }
+    std::cout<< result<<std::endl;
 }
 
 int main() {
@@ -142,33 +173,30 @@ int main() {
     reverseName(myName);
 */
 
-    int number = 5;
-    int number2 = 5;
+    int number = 3;
 
-    std::vector<std::vector<int>> result(number, std::vector<int>(number));
-    result = function(number);
-    std::vector<std::vector<int>> result2(number2, std::vector<int>(number2));
-    result2 = function(number2);
+    std::vector<std::vector<int>> szorzotabla(number, std::vector<int>(number));
+    szorzotabla = function(number);
 
-
-    for (int i = 0; i < number; i++){
-        for (int j = 0; j < number; j++){
-            std::cout <<result[i][j] << " ";
+    for (int i = 0; i < szorzotabla.size(); ++i) {
+        for (int j = 0; j < szorzotabla.size(); ++j) {
+            std::cout<< szorzotabla[i][j]<< " ";
         }
-        std::cout << std::endl;
-    }
-    std::cout << std::endl;
-
-    for (int i = 0; i < number2; i++){
-        for (int j = 0; j < number2; j++){
-            std::cout << result2[i][j] << " ";
-        }
-        std::cout << std::endl;
+        std::cout<<std::endl;
     }
 
+    std::cout<<std::endl;
 
-    return 0;
+    std::vector<int> vectorToSort = {33, 58, 124, 321, 87, 99, 4, 5, 2, 75, 23, 44, 19};
+    std::vector<int> sortedVector = bubbleSort(vectorToSort);
 
+    for (int k = 0; k < sortedVector.size(); ++k) {
+        std::cout<< sortedVector[k]<< " ";
+    }
+    std::cout<<std::endl;
+
+    std::string name = "samohT";
+    stringReverse(name);
 
     return 0;
 }
