@@ -2,6 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+typedef struct
+{
+    char *name;
+    unsigned int age;
+    char *sex;
+} person_t;
+
+void csere(int *a,int *b);
+
+
 int main() {
 
     //      M E M C P Y ( ) ;
@@ -76,8 +87,65 @@ int main() {
     char * movie = "Best";
     char movie2[] = "Best";
 
-    printf("%d\n", sizeof(movie));
-    printf("%d\n", sizeof(movie2));
+    printf("pointer: %d\n", sizeof(movie));
+    printf("array: %d\n", sizeof(movie2));
+
+    printf("-------------------------------------------------\n");
+
+    char stringToken[80] = "My name is Tamas\n";
+    char del[2] = " ";
+
+    char *tokenize;
+    tokenize = strtok(stringToken, del);
+    while (tokenize != NULL){
+        printf(" %s \t", tokenize);
+        tokenize = strtok(NULL, del);
+    }
+
+    printf("----------------------------------------------\n");
+
+        int k=2, l=4;
+
+        printf("%d,%d",k,l);
+
+        csere(&k,&l);
+
+        printf("\n%d,%d \n",k,l);
+
+
+
+        printf("-----------------------------------------------------\n");
+
+        char soursString[50] = "i have an exam today.";
+        char delString[2] = " ";
+
+        char *ptr_token;
+        ptr_token = strtok(soursString, delString);
+        while(ptr_token != NULL){
+            printf("%s \t", ptr_token);
+            ptr_token = strtok(NULL, delString);
+        }
+
+
+        printf("\n------------------------------------------------------------\n");
+
+        person_t person;
+
+        person.name = "Tamas Nemeth";
+        person.age = 28;
+        person.sex = "Male";
+
+        printf("So, this person is %s and he is %d old. His grender is %s . He would be really happy if he would pass"
+               " tomorrow.\n", person.name, person.age, person.sex);
+
 
     return 0;
+}
+
+void csere(int *a,int *b)
+{
+    int s;
+    s=*a;
+    *a=*b;
+    *b=s;
 }

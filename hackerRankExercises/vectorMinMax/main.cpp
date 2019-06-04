@@ -1,6 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <cstring>
 #include "struct.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+
 typedef enum
 {
     EVEN,
@@ -116,7 +121,7 @@ std::vector<int> bubbleSort(std::vector<int> inputVector)
     return resultVector;
 }
 
-void stringReverse ( std::string input)
+std::string stringReverse ( std::string input)
 {
     std::string result = input;
     int lenght = result.length();
@@ -127,7 +132,10 @@ void stringReverse ( std::string input)
         result[lenght - i -1] = temp;
     }
     std::cout<< result<<std::endl;
+    return result;
 }
+
+
 
 int main() {
 /*
@@ -171,7 +179,7 @@ int main() {
     }
 
     reverseName(myName);
-*/
+
 
     int number = 3;
 
@@ -197,6 +205,19 @@ int main() {
 
     std::string name = "samohT";
     stringReverse(name);
+*/
+
+    std::string sentence = "Forditsd meg ezt a mondtatot";
+    int counter = 0;
+    char del = ' ';
+
+    std::string resultString = stringReverse(sentence);
+    for (int i = 0; i < resultString.length()-1; ++i) {
+        if(resultString[i] == del){
+            counter++;
+        }
+    }
+    std::cout << counter << std::endl;
 
     return 0;
 }
