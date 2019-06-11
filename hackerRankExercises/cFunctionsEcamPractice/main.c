@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define PI 3.14
+
 
 typedef struct
 {
@@ -9,6 +11,12 @@ typedef struct
     unsigned int age;
     char *sex;
 } person_t;
+
+typedef union
+{
+    person_t person;
+    int age;
+} union_t;
 
 void csere(int *a,int *b);
 
@@ -135,10 +143,19 @@ int main() {
         person.age = 28;
         person.sex = "Male";
 
+        union_t unionPerson;
+        unionPerson.age = 4;
+        unionPerson.person.age = 4;
+        unionPerson.person.sex = "Male";
+
+        printf("%s", unionPerson.person.sex);
         printf("So, this person is %s and he is %d old. His grender is %s . He would be really happy if he would pass"
                " tomorrow.\n", person.name, person.age, person.sex);
 
 
+        double a = 2 * PI;
+
+        printf("\n value of a: %lf", a);
     return 0;
 }
 
