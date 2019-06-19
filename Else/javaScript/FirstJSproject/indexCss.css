@@ -1,5 +1,56 @@
-.a
-{
-font-family: 'Times New Roman';
-font-size: 60;
+
+
+.body-image{
+    background-image: url(abc.png);
+    background-position: center;
+    background-attachment: scroll;
+    align-content: center;
+    background-size: cover;
+}
+
+
+#gopro{
+    background-image: url(award.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: relative;
+    top : 100px;
+}
+
+.register-buttom{
+    background-color: black;
+    color :lightgray;
+    border: 0,5px solid;
+    position: relative;
+    padding-inline-start: 80px;
+    padding-inline-end: 20px;
+    top: 80px;
+    left: 20px;
+    border-radius: 8px;
+    opacity: 0.7;
+
+}
+
+.login-buttom{
+    background-color: black;
+    color :lightgray;
+    border: 0,5px solid;
+    padding-inline-start: 20px;
+    padding-inline-end: 100px;
+    position: relative;
+    top: 80px;
+    left: 208px;
+    border-radius: 8px;
+    opacity: 0.7;
+
+}
+
+img{
+    display: block;
+    width: 45%;
+    opacity: 0.7;
+    position: relative;
+    left: 20px;
+    border-radius: 8px;
+
 }
