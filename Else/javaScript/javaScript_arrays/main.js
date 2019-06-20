@@ -48,6 +48,10 @@ for (let m = 0; m < s.length; m++) {
 }
 console.log(s);
 
+let map1 = s.map(4, 3, s);
+
+console.log(map1);
+
 // - Create a variable named `animals`
 //   with the following content: `['koal', 'pand', 'zebr']`
 // - Add all elements an `"a"` at the end
@@ -68,8 +72,17 @@ console.log(animals);
 // - Print the elements of the reversed `aj`
 
 
+
+let az = [7, 6, 5, 4, 3];
 let aj = [3, 4, 5, 6, 7];
 let tempArray = [];
-for (let o = aj.length; o < aj.length; o) {
-    
+for (let o = 0; o < aj.length/2; o++) {
+    let temp = aj[o];
+    aj[o] = aj[aj.length-o-1];
+    aj[aj.length-o-1] = temp;
 }
+
+az.reverse();
+
+console.log(az);
+console.log(aj);
