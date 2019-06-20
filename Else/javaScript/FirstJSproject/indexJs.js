@@ -1,9 +1,10 @@
 
 
 function clickToRegister(){
-    alert("You have clicked to Register");
+    document.getElementById("register-box").style.display = "block";
 }
 
 function clickToLogin(){
     alert("You have clicked to Login");
 }
+
