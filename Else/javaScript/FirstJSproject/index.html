@@ -1,38 +1,60 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="indexCss.css">
+        <script src="indexJs.js"></script>
     </head>
     
-    <body id="body-image">
-            <script src="indexJs.js"></script>
-            <img src="award2.jpg">
-        
-        <div class="register">
-            <button class="register-buttom"
-            onclick="clickToRegister()">
-                    <h1>Register</h1>
-            </button>
+    <body>
+        <div class = "container">
+                <img class="award" src="award2.jpg">
+            <form>
+            <div class="register">
+                <button id = "register" type="button" class="register-buttom"
+                onclick="analyseClick(this.id)">
+                        <h1>Register</h1>
+                </button>
+            </div>
 
-        </div>
+            <div class="login">
+                <button id ="login" type="button" class="login-buttom"
+                onclick="analyseClick(this.id);">
+                        <h1>Login</h1>
+                </button>
 
-        <div class="login">
-            <button class="login-buttom"
-            onclick="clickToLogin()">
-                    <h1>Login</h1>
-            </button>
+            </div>
 
-        </div>
+            <div id="register-box" style="display:none">
+                <p class="welcome_register"><h4>Hi there! <br> Please enter your details to register on our website!</h4></p>
+                    <label for="fname">Full Name</label><br>
+                    <input id="name" placeholder="Full Name"
+                    type="text"/> <br> 
+                    <label for="username">Username</label><br>
+                    <input id="username" placeholder="Username"
+                    type="text"/> <br>         
+                    <label for="email">E-mail Adress</label><br>
+                    <input id="e-mail" placeholder="E-mail Adress"
+                    type="text"/> <br> 
+                    <label for="password">Password</label><br>
+                    <input id="password" placeholder="Password"
+                    type="text"/> <br> 
+                    <label for="password">Confirm password</label><br>
+                    <input id="confirmpassword" placeholder="Confirm password"
+                    type="text"/> <br> 
+            </div>          
 
-        <div id="register-box" style="display:none">
-                    <label for="fname">First Name</label>
+            <div id="login-box" style="display:none">
+                <label for="username">Username</label><br>
+                <input id="username" placeholder="Username"
+                type="text"/> <br> 
+                <label for="password">Password</label><br>
+                <input id="password" placeholder="Password"
+                type="text"/> <br> 
                 
-                    <label for="lname">Last Name</label>
-                
-                    <label for="country">Country</label>
-                    
-                
-        </div>
+            </div>          
+        </form>
 
+     </div>
+    </div>
     </body>
 
 

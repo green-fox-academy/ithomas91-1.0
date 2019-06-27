@@ -48,7 +48,7 @@ for (let m = 0; m < s.length; m++) {
 }
 console.log(s);
 
-let map1 = s.map(4, 3, s);
+
 
 console.log(map1);
 
