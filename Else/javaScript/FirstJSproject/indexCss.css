@@ -45,6 +45,18 @@ body, html{
     opacity: 0.7;
 }
 
+.submitRegistration { 
+    background-color: black;
+    color :lightgray;
+    border: 2px solid;
+    position: relative;
+    border-radius: 8px;
+    opacity: 0.7;
+    text-align: center;
+    border-color: red;
+    margin: 10px;
+}
+
 .award{
     display: flex;
     width: 750px; 

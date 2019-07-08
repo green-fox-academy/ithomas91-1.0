@@ -20,34 +20,42 @@
                 onclick="analyseClick(this.id);">
                         <h1>Login</h1>
                 </button>
-
             </div>
 
             <div id="register-box" style="display:none">
                 <p class="welcome_register"><h4>Hi there! <br> Please enter your details to register on our website!</h4></p>
-                    <label for="fname">Full Name</label><br>
-                    <input id="name" placeholder="Full Name"
-                    type="text"/> <br> 
-                    <label for="username">Username</label><br>
-                    <input id="username" placeholder="Username"
-                    type="text"/> <br>         
-                    <label for="email">E-mail Adress</label><br>
-                    <input id="e-mail" placeholder="E-mail Adress"
-                    type="text"/> <br> 
-                    <label for="password">Password</label><br>
-                    <input id="password" placeholder="Password"
-                    type="text"/> <br> 
-                    <label for="password">Confirm password</label><br>
-                    <input id="confirmpassword" placeholder="Confirm password"
-                    type="text"/> <br> 
-            </div>          
+                       <form>
+                        Full Name<br>
+                        <input  id="name", placeholder="Type here..."
+                        type="text"> <br> 
+                        Username<br>
+                        <input  id="username" type="text" placeholder="Type here..."
+                        type="text"/> <br>         
+                        E-mail Adress<br>
+                        <input  id="e-mail" type="text" placeholder="Type here..."
+                        type="text"/> <br> 
+                        Password<br>
+                        <input  id="password" type="text" placeholder="Type here..."
+                        type="text"/> <br> 
+                        Confirm password<br>
+                        <input  id="confirmpassword"type="text" placeholder="Type here..."
+                        type="text"/> <br> 
+                       </form>
+                            <button class ="submitRegistration" type="submit" 
+                            onsubmit="getUserData()">
+                            <h1>Submit</h1>
+                            </button>
+                        
+            </div>        
+           
+           
 
             <div id="login-box" style="display:none">
-                <label for="username">Username</label><br>
-                <input id="username" placeholder="Username"
+                <label for="username">Username<br>
+                <input id="username" placeholder="Type here..."
                 type="text"/> <br> 
-                <label for="password">Password</label><br>
-                <input id="password" placeholder="Password"
+                <label for="password">Password<br>
+                <input id="password" placeholder="Type here..."
                 type="text"/> <br> 
                 
             </div>          
