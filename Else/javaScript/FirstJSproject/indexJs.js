@@ -1,51 +1,79 @@
-
-
-function clickToRegister(){
-    document.getElementById("register-box").style.display="block";
+function clickToRegister() {
+    document.getElementById("register-box").style.display = "block";
 }
 
-function clickToLogin(){
+function clickToLogin() {
     document.getElementById("login-box").style.display = "block";
 }
 
 let value;
 
-function analyseClick(id){
-    switch(id)
-    {
-        case "login" :
-                clickToLogin();
-                break;
-        case "register" : 
-                clickToRegister();
-                break;
-            default:
-                alert("Try again!");
-                break;
-    }   
+function analyseClick(id) {
+    switch (id) {
+        case "login":
+            clickToLogin();
+            break;
+        case "register":
+            clickToRegister();
+            break;
+        default:
+            alert("Try again!");
+            break;
+    }
 
 }
 
-let userData = {};
+let userData = {
+    fullname: [],
+    username: [],
+    email: [],
+    password: [],
+    confirmation: []
+};
 let users = [];
 
 
+
 function getUserData() {
-    userData["Full Name"] = document.getElementById("name").value;
-    //userData.push(userFullName);
-    userData["username"] =  document.getElementById("username").value;
-    //userData.push(username);
-    userData["emailAdress"] =  document.getElementById("e-mail").value;
-    //userData.push(emailAdress);
-    userData["password"] =  document.getElementById("password").value;
-    //userData.push(password);
-    userData["confirmPassword"] =  document.getElementById("confirmpassword").value;
-    //userData.push(confirmPassword);
-    if(userData["Full Name"] != null || userData["username"] != null || 
-    userData["e-mail"] != null || userData["password"] != null
-    || userData["confirmPassword"] != null) {
-        users.push(userData);
+    let nameFull = document.getElementById("name").value;
+    let userName = document.getElementById("username").value;
+    let email = document.getElementById("e-mail").value;
+    let passWord = document.getElementById("password").value;
+    let passwordConfirmation = document.getElementById("confirmpassword").value;
+
+    userData.fullname.push(nameFull);
+    userData.username.push(userName);
+}
+
+users.push(userData);
+
+
+let register = document.getElementById("register")
+let login = document.getElementById("login");
+
+register.addEventListener("click", boxLink);
+login.addEventListener("click", boxLink);
+
+function boxLink() {
+    let boxId = this.attributes["egister-box"].value;
+    let box = document.getElementById(boxId);
+    if (box.className === "hide") {
+        box.className = "";
     } else {
-        alert("Empty field!");
+        box.className = "hide";
     }
 }
+
+$(document).ready(function() {
+    $('#register').on('click', function() {
+        $('#register-box').toggle(500);
+        $('#login-box').hide();
+    });
+});
+
+$(document).ready(function() {
+    $('#login').on('click', function() {
+        $('#login-box').toggle(500);
+        $('#register-box').hide();
+    });
+});

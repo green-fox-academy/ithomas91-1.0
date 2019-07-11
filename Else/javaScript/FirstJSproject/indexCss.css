@@ -1,28 +1,26 @@
-
-
-body, html{
+body,
+html {
     background-image: url(abc.png);
     background-position: auto;
     background-attachment: scroll;
     background-size: cover;
-    width:100%;
+    width: 100%;
     margin: 10px;
     height: 10px;
 }
 
-
-#gopro{
+#gopro {
     background-image: url(award.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: relative;
-    top : 100px;
+    top: 100px;
 }
 
-.register-buttom{
+.register-buttom {
     background-color: black;
-    color :lightgray;
-    border: 0,5px solid;
+    color: lightgray;
+    border: 0, 5px solid;
     position: relative;
     padding-inline-start: 80px;
     padding-inline-end: 20px;
@@ -32,10 +30,10 @@ body, html{
     opacity: 0.7;
 }
 
-.login-buttom{
+.login-buttom {
     background-color: black;
-    color :lightgray;
-    border: 0,5px solid;
+    color: lightgray;
+    border: 0, 5px solid;
     padding-inline-start: 20px;
     padding-inline-end: 110px;
     position: relative;
@@ -45,9 +43,9 @@ body, html{
     opacity: 0.7;
 }
 
-.submitRegistration { 
+.submitRegistration {
     background-color: black;
-    color :lightgray;
+    color: white;
     border: 2px solid;
     position: relative;
     border-radius: 8px;
@@ -57,9 +55,9 @@ body, html{
     margin: 10px;
 }
 
-.award{
+.award {
     display: flex;
-    width: 750px; 
+    width: 750px;
     opacity: 0.7;
     position: relative;
     top: 70px;
@@ -67,21 +65,40 @@ body, html{
     border-radius: 8px;
 }
 
-#register-box{
+#register-box {
     background-color: black;
     color: white;
-    opacity: 0.4;
+    opacity: 0.5;
     width: 400px;
     padding: 20px;
     border: 1px solid;
     border-radius: 8px;
     position: absolute;
-    left: 900px;
+    left: 50%;
     top: 80px;
-    text-align: start ;
+    text-align: start;
+    font-display: Times;
+    display: none;
+}
+
+#login-box {
+    background-color: black;
+    color: white;
+    opacity: 0.5;
+    width: 400px;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    text-align: start;
     font-display: Times;
 }
-input[type=text], select, textarea {
+
+input[type=text],
+select,
+textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -90,28 +107,4 @@ input[type=text], select, textarea {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-  }
-  
-  input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  #login-box{
-    background-color: black;
-    color: white;
-    opacity: 0.4;
-    width: 400px;
-    padding: 20px;
-    border: 1px solid;
-    border-radius: 8px;
-    position: absolute;
-    left: 900px;
-    top: 80px;
-    text-align: start ;
-    font-display: Times;
-  }
+}

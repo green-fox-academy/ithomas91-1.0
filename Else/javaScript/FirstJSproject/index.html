@@ -1,54 +1,47 @@
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="indexCss.css">
-        <script src="indexJs.js"></script>
-    </head>
-    
-    <body>
-        <div class = "container">
-                <img class="award" src="award2.jpg">
-            <form>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="indexCss.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <img class="award" src="award2.jpg">
+        <form>
             <div class="register">
-                <button id = "register" type="button" class="register-buttom"
-                onclick="analyseClick(this.id)">
+                <button id="register" type="button" class="register-buttom">
                         <h1>Register</h1>
                 </button>
             </div>
 
             <div class="login">
-                <button id ="login" type="button" class="login-buttom"
-                onclick="analyseClick(this.id);">
+                <button id="login" type="button" class="login-buttom">
                         <h1>Login</h1>
                 </button>
             </div>
 
-            <div id="register-box" style="display:none">
-                <p class="welcome_register"><h4>Hi there! <br> Please enter your details to register on our website!</h4></p>
-                       <form>
-                        Full Name<br>
-                        <input  id="name", placeholder="Type here..."
-                        type="text"> <br> 
-                        Username<br>
-                        <input  id="username" type="text" placeholder="Type here..."
-                        type="text"/> <br>         
-                        E-mail Adress<br>
-                        <input  id="e-mail" type="text" placeholder="Type here..."
-                        type="text"/> <br> 
-                        Password<br>
-                        <input  id="password" type="text" placeholder="Type here..."
-                        type="text"/> <br> 
-                        Confirm password<br>
-                        <input  id="confirmpassword"type="text" placeholder="Type here..."
-                        type="text"/> <br> 
-                       </form>
-                            <button class ="submitRegistration" type="submit" 
-                            onsubmit="getUserData()">
+            <div id="register-box" class="hide">
+                <p class="welcome_register">
+                    <h4>Hi there! <br> Please enter your details to register on our website!</h4>
+                </p>
+                <form>
+                    Full Name<br>
+                    <input id="name" , placeholder="Type here..." type="text"> <br> Username
+                    <br>
+                    <input id="username" type="text" placeholder="Type here..." type="text" /> <br> E-mail Adress<br>
+                    <input id="e-mail" type="text" placeholder="Type here..." type="text" /> <br> Password
+                    <br>
+                    <input id="password" type="text" placeholder="Type here..." type="text" /> <br> Confirm password<br>
+                    <input id="confirmpassword" type="text" placeholder="Type here..." type="text" /> <br>
+                </form>
+                <button class="submitRegistration" type="button" onclick="getUserData()">
                             <h1>Submit</h1>
                             </button>
-                        
-            </div>        
-           
-           
+
+            </div>
+
+
 
             <div id="login-box" style="display:none">
                 <label for="username">Username<br>
@@ -57,12 +50,16 @@
                 <label for="password">Password<br>
                 <input id="password" placeholder="Type here..."
                 type="text"/> <br> 
-                
+                <button class="submitRegistration" type="button" onclick="getUserData()">
+                    <h1>Submit</h1>
+                    </button>
             </div>          
         </form>
 
      </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="indexJs.js"></script>
     </body>
 
 
